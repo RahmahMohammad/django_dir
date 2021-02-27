@@ -1,0 +1,22 @@
+
+{% extends 'app/base.html' %}
+
+{% block content %}
+
+<a href="{% url 'bloger_edit' pk=bloger.pk %}">(edit)</a>
+<a href="{% url 'bloger_delete' pk=bloger.pk %}">(delete)</a>
+<h2>{{ bloger.name }}</h2>
+<h4>{{ bloger.nationality }}</h4>
+
+<img src="{{ bloger.photo_url }}" alt="">
+
+<h3>Blogs <a href="">(+)</a></h3>
+<ul>
+    {% for blog in bloger.blogs.all %}
+        <li>
+            <a href="{% url 'blog_detail' pk=blog.pk %}">{{ blog }}</a>
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

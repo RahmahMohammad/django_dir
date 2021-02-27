@@ -1,0 +1,11 @@
+
+{% extends 'app/base.html' %}
+
+{% block content %}
+
+<a href="{% url 'blog_edit' pk=blog.pk %}">(edit)</a>
+<a href="{% url 'blog_delete' pk=blog.pk %}">(delete)</a>
+<h2>{{ blog.title }}</h2>
+<h4>{{ blog.bloger }}</h4>
+
+{% endblock %}

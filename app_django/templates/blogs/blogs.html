@@ -1,0 +1,17 @@
+
+{% extends 'app/base.html' %}
+
+{% block content %}
+
+<h2>Blogs <a href="{% url 'blog_create' %}">(+)</a></h2>
+<ul>
+    {% for blog in blogs %}
+        <li>
+            <a href="{% url 'blog_detail' pk=blog.pk %}">{{ blog.title }}</a>
+            <br>
+            <a href="">{{ blog.bloger}}</a>
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
